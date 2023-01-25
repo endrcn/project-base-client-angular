@@ -7,6 +7,12 @@ import { HeaderComponent } from './template/header/header.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { UserUpdateComponent } from './users/user-update/user-update.component';
+import { UserAddComponent } from './users/user-add/user-add.component';
+import { RoleListComponent } from './roles/role-list/role-list.component';
+import { RoleUpdateComponent } from './roles/role-update/role-update.component';
+import { RoleAddComponent } from './roles/role-add/role-add.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +20,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserListComponent,
+    UserUpdateComponent,
+    UserAddComponent,
+    RoleListComponent,
+    RoleUpdateComponent,
+    RoleAddComponent
   ],
   imports: [
     BrowserModule,
