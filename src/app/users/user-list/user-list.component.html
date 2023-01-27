@@ -44,10 +44,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><a href="invoice.html" class="text-reset" tabindex="-1">test@example.com</a></td>
-                            <td>Ender</td>
-                            <td>CAN</td>
+                        <tr *ngFor="let user of users">
+                            <td><a href="invoice.html" class="text-reset" tabindex="-1">{{user.email}}</a></td>
+                            <td>{{user.first_name}}</td>
+                            <td>{{user.last_name}}</td>
                             <td><span class="badge bg-success me-1"></span> Active</td>
                             <td class="text-end">
                                 <span class="dropdown">
