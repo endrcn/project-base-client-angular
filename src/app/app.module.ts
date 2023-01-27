@@ -13,6 +13,7 @@ import { UserAddComponent } from './users/user-add/user-add.component';
 import { RoleListComponent } from './roles/role-list/role-list.component';
 import { RoleUpdateComponent } from './roles/role-update/role-update.component';
 import { RoleAddComponent } from './roles/role-add/role-add.component';
+import { Globals } from './globals';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { RoleAddComponent } from './roles/role-add/role-add.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
