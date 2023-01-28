@@ -8,6 +8,7 @@ import { Globals } from '../../app/globals';
 import decode from 'jwt-decode';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Response } from '../models/response.model';
 
 
 @Injectable()
@@ -31,7 +32,7 @@ export class AuthService {
   }
 
   login(email: any, password: any) {
-    return this.http.post<object>(this.globals.url + "api/users/auth", { email, password });
+    return this.http.post<any>(this.globals.url + "api/users/auth", { email, password });
   }
 
 

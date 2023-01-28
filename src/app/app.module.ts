@@ -24,6 +24,8 @@ import { BrowserNotification } from './lib/browserNotification';
 import { AuthGuard } from './services/auth.guard';
 import { AuthService } from './services/auth.service';
 import { RoleGuardService } from './services/role.guard';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -42,12 +44,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     UserAddComponent,
     RoleListComponent,
     RoleUpdateComponent,
-    RoleAddComponent
+    RoleAddComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ToastrModule.forRoot(),
     TranslateModule.forRoot({
       defaultLanguage: "tr",
