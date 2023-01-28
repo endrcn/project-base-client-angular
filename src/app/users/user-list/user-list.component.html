@@ -48,7 +48,9 @@
                             <td><a href="invoice.html" class="text-reset" tabindex="-1">{{user.email}}</a></td>
                             <td>{{user.first_name}}</td>
                             <td>{{user.last_name}}</td>
-                            <td><span class="badge bg-success me-1"></span> Active</td>
+                            <td>
+                                <span class="badge bg-success me-1" [ngClass]="{'bg-success': user.is_active, 'bg-danger': !user.is_active}"></span> {{user.is_active ? 'Active' : 'Passive'}}
+                            </td>
                             <td class="text-end">
                                 <span class="dropdown">
                                     <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
