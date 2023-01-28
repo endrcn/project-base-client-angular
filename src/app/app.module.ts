@@ -15,7 +15,7 @@ import { RoleListComponent } from './roles/role-list/role-list.component';
 import { RoleUpdateComponent } from './roles/role-update/role-update.component';
 import { RoleAddComponent } from './roles/role-add/role-add.component';
 import { Globals } from './globals';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Alert } from './lib/alert';
 import { ToastrModule } from 'ngx-toastr';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -26,6 +26,7 @@ import { AuthService } from './services/auth.service';
 import { RoleGuardService } from './services/role.guard';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { TokenInterceptor } from './services/token.interceptor';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -64,6 +65,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     Globals,
     Alert,
     BrowserNotification,

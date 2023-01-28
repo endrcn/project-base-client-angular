@@ -14,8 +14,8 @@ import { Response } from '../models/response.model';
 @Injectable()
 export class AuthService {
 
-  isLoginPublisher = new BehaviorSubject<boolean>(this.getLocalData('tlmt_token'))
-  userPublisher = new BehaviorSubject<boolean>(this.getLocalData('tlmt_user'))
+  isLoginPublisher = new BehaviorSubject<boolean>(this.getLocalData('pb_token'))
+  userPublisher = new BehaviorSubject<boolean>(this.getLocalData('pb_user'))
 
   user: any = {};
 
@@ -25,7 +25,7 @@ export class AuthService {
     });
   }
 
-  public saveToLocal(name: string, data: string | null) {
+  public saveToLocal(name: string, data: any) {
     if (typeof data === 'object')
       data = JSON.stringify(data);
     localStorage.setItem(name, data)
@@ -50,14 +50,14 @@ export class AuthService {
       }
       // await lastValueFrom(this.http.post(this.globals.url + "api/users/logout", {}));
 
-      localStorage.removeItem('tlmt_token');
-      localStorage.removeItem('tlmt_user');
+      localStorage.removeItem('pb_token');
+      localStorage.removeItem('pb_user');
       this.isLoginPublisher.next(false);
       this.userPublisher.next(false);
       this.router.navigate(['login']);
     } catch (err) {
-      localStorage.removeItem('tlmt_token');
-      localStorage.removeItem('tlmt_user');
+      localStorage.removeItem('pb_token');
+      localStorage.removeItem('pb_user');
       this.isLoginPublisher.next(false);
       this.userPublisher.next(false);
       this.router.navigate(['login']);
@@ -67,9 +67,9 @@ export class AuthService {
   }
 
   public getLocalData(name: string): boolean {
-    if (name == 'tlmt_token') return !!localStorage.getItem('tlmt_token');
+    if (name == 'pb_token') return !!localStorage.getItem('pb_token');
 
-    let user = localStorage.getItem('tlmt_user')
+    let user = localStorage.getItem('pb_user')
     if (user && user != 'undefined') {
       return JSON.parse(user)
     }
@@ -86,7 +86,7 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     let payload;
-    let token = localStorage.getItem("tlmt_token");
+    let token = localStorage.getItem("pb_token");
     if (token) {
       payload = decode(token);
       // return payload.exp <= Date.now();
