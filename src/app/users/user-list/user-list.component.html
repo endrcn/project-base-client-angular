@@ -4,7 +4,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <h2 class="page-title">
-                    User List
+                    {{'USERS.LIST_TITLE' | translate}}
                 </h2>
             </div>
         </div>
@@ -18,20 +18,21 @@
             </div>
             <ngx-datatable class="material fullscreen table table-responsive" [columnMode]="ColumnMode.force"
                 [headerHeight]="50" [rowHeight]="50" [rows]="users" [limit]="basicSelectedOption">
-                <ngx-datatable-column name="Email" prop="email" [width]="300"></ngx-datatable-column>
-                <ngx-datatable-column name="Name" prop="first_name">
+                <ngx-datatable-column name="{{'USERS.TABLE.EMAIL' | translate}}" prop="email"
+                    [width]="300"></ngx-datatable-column>
+                <ngx-datatable-column name="{{'USERS.TABLE.FULL_NAME' | translate}}" prop="first_name">
                     <ng-template ngx-datatable-cell-template let-row="row">
                         <span>{{row.first_name}} {{row.last_name}}</span>
                     </ng-template>
                 </ngx-datatable-column>
-                <ngx-datatable-column name="Status" prop="is_active">
+                <ngx-datatable-column name="{{'COMMON.STATUS' | translate}}" prop="is_active">
                     <ng-template ngx-datatable-cell-template let-row="row">
                         <span class="badge bg-success me-1"
                             [ngClass]="{'bg-success': row.is_active, 'bg-danger': !row.is_active}"></span>
                         {{row.is_active ? 'Active' : 'Passive'}}
                     </ng-template>
                 </ngx-datatable-column>
-                <ngx-datatable-column name="Actions" [width]="100">
+                <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="100">
                     <ng-template ngx-datatable-cell-template>
                         <div class="btn-group">
                             <button class="btn btn-pill btn-sm btn-outline-warning">

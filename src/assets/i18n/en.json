@@ -1,0 +1,130 @@
+{
+  "MAIN_MENU": {
+    "DASHBOARD": "Dashboard",
+    "USERS_AND_ROLES": "Users & Roles",
+    "USERS": "Users",
+    "AUTHORIZATION": "Authorization",
+    "ROLES": "Roles",
+    "AUTHORITY": "Authorities",
+    "CATEGORIES": "Categories",
+    "SECURITY": "Security",
+    "AUDITLOGS": "Activities"
+  },
+  "USERS": {
+    "LIST_TITLE": "User List",
+    "ADD": "Add User",
+    "UPDATE_TITLE": "Update User",
+    "TABLE": {
+      "EMAIL": "Email",
+      "FULL_NAME": "Name",
+      "FIRST_NAME": "Fist Name",
+      "LAST_NAME": "Last Name",
+      "PHONE": "Phone",
+      "PASSWORD": "Password",
+      "ROLE": "Role",
+      "ROLES": "Roles"
+    }
+  },
+  "CATEGORIES": {
+    "TITLE": "Categories",
+    "ADD": "Add Category",
+    "UPDATE": "Update Category",
+    "TYPE": "Category Type",
+    "TABLE": {
+      "NAME": "Category Name"
+    },
+    "SELECT_CATEGORY": "Select a Category"
+  },
+  "ROLES": {
+    "LIST_TITLE": "Role List",
+    "ADD": "Add Role",
+    "UPDATE_TITLE": "Update Role",
+    "TABLE": {
+      "NAME": "Role Name",
+      "DESC": "Description",
+      "LEVEL": "Seviye"
+    },
+    "DELETE_WARNING_MSG": "Rolü silmek istediğinize emin misiniz?",
+    "PRIVILEGES": {
+      "TITLE": "Rol Yetkileri",
+      "ADMIN_ACCESS": "Yönetici Erişimi",
+      "ADMIN_ACCESS_INFO": "Tüm sisteme erişime izin verir",
+      "KEYS": {
+        "VIEW": "Görüntüleme",
+        "PARTIALVIEW": "Kısıtlı Görüntüleme",
+        "ADD": "Ekleme",
+        "UPDATE": "Güncelleme",
+        "DELETE": "Silme",
+        "URGENT": "Öne Çıkarma",
+        "REJECT": "İptal Etme",
+        "PASS_TO_LAST": "Seviye Atlatma",
+        "PASS_TO_MAN": "Yöneticiye Gönderme",
+        "RETURN_TO_START": "Başa Döndürme",
+        "GET_CONFIRMATION": "Teyit Alma",
+        "REJECT_COMPLETED": "Tamamlananı İptal Etme"
+      },
+      "GROUPS": {
+        "USER": "Kullanıcı Yönetimi",
+        "ROLE": "Rol Yönetimi",
+        "INSTRUCTION": "Talimat Yönetimi",
+        "INSTRUCTIONCONTROL": "Talimat Kontrol Yönetimi",
+        "DASHBOARD": "Panel Yönetimi",
+        "CATEGORY": "Kategori Yönetimi",
+        "FILE": "Dosya Yönetimi",
+        "AUDITLOGS": "Aktiviteler"
+      }
+    }
+  },
+  "AUTH": {
+    "SIGNIN": "Giriş Yap",
+    "EMAIL": "E-Posta",
+    "PASSWORD": "Şifre",
+    "LOGOUT": "Çıkış Yap"
+  },
+  "AUDITLOGS": {
+    "TITLE": "Aktiviteler"
+  },
+  "TABLE": {
+    "SEARCH": "Ara"
+  },
+  "COMMON": {
+    "DESCRIPTION": "Description",
+    "DESCRIPTION_INFO": "Type a description...",
+    "APPROVE": "Approve",
+    "CANCEL": "Cancel",
+    "REJECT": "Reject",
+    "ACTIVATE": "Activate",
+    "ADD": "Add",
+    "UPDATE": "Update",
+    "ERROR_TITLE": "Error!",
+    "ACTIONS": "Actions",
+    "WARNING_TITLE": "Warning!",
+    "YES": "Yes",
+    "SELECT_ALL": "Select All",
+    "SUCCESS_TITLE": "Successfull!",
+    "SUCCESS_ADD": "Successfully added.",
+    "SUCCESS_DELETE": "Successfully deleted.",
+    "SUCCESS_UPDATE": "Successfully updated.",
+    "ACTIVE": "Active",
+    "PASSIVE": "Passive",
+    "CREATED_DATE": "Created Date",
+    "FILTERS": "Filters",
+    "SEARCH": "Search",
+    "DATE": "Date",
+    "UNAUTH_ERROR_INFO": "Please login again.",
+    "UNAUTH_ERROR_TITLE": "Need Permission",
+    "OTHER": "Other",
+    "DELETE_WARNING_MSG": "Are you sure you want to delete?",
+    "STATUS": "Status"
+  },
+  "DASHBOARD": {
+    "TODAY_STATS_TITLE": "Today's Stats",
+    "TOTAL_PROCESS_COUNT": "Total Process Count",
+    "DATE": {
+      "TODAY": "Today",
+      "LAST_X_DAYS": "Last {{value}} Days",
+      "LAST_MONTH": "Last Month",
+      "LAST_YEAR": "Last Year"
+    }
+  }
+}
