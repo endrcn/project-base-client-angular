@@ -27,6 +27,7 @@ import { RoleGuardService } from './services/role.guard';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { TokenInterceptor } from './services/token.interceptor';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -52,6 +53,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxDatatableModule,
     FormsModule,
     ToastrModule.forRoot(),
     TranslateModule.forRoot({

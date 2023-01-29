@@ -15,93 +15,50 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-body border-bottom py-3">
-                <div class="d-flex">
-                    <div class="text-muted">
-                        Show
-                        <div class="mx-2 d-inline-block">
-                            <input type="text" class="form-control form-control-sm" value="8" size="3"
-                                aria-label="Invoices count">
+            </div>
+            <ngx-datatable class="material fullscreen table table-responsive" [columnMode]="ColumnMode.force"
+                [headerHeight]="50" [rowHeight]="50" [rows]="users" [limit]="basicSelectedOption">
+                <ngx-datatable-column name="Email" prop="email" [width]="300"></ngx-datatable-column>
+                <ngx-datatable-column name="Name" prop="first_name">
+                    <ng-template ngx-datatable-cell-template let-row="row">
+                        <span>{{row.first_name}} {{row.last_name}}</span>
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Status" prop="is_active">
+                    <ng-template ngx-datatable-cell-template let-row="row">
+                        <span class="badge bg-success me-1"
+                            [ngClass]="{'bg-success': row.is_active, 'bg-danger': !row.is_active}"></span>
+                        {{row.is_active ? 'Active' : 'Passive'}}
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Actions" [width]="100">
+                    <ng-template ngx-datatable-cell-template>
+                        <div class="btn-group">
+                            <button class="btn btn-pill btn-sm btn-outline-warning">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-pencil-minus" width="24" height="24"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z"></path>
+                                    <path d="M13.5 6.5l4 4"></path>
+                                    <path d="M16 18h4"></path>
+                                </svg>
+                            </button>
+                            <button class="btn btn-pill btn-sm btn-outline-danger">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M18 6l-12 12"></path>
+                                    <path d="M6 6l12 12"></path>
+                                </svg>
+                            </button>
                         </div>
-                        entries
-                    </div>
-                    <div class="ms-auto text-muted">
-                        Search:
-                        <div class="ms-2 d-inline-block">
-                            <input type="text" class="form-control form-control-sm" aria-label="Search invoice">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="table-responsive">
-                <table class="table card-table table-vcenter text-nowrap datatable">
-                    <thead>
-                        <tr>
-                            <th>Email</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Status</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let user of users">
-                            <td><a href="invoice.html" class="text-reset" tabindex="-1">{{user.email}}</a></td>
-                            <td>{{user.first_name}}</td>
-                            <td>{{user.last_name}}</td>
-                            <td>
-                                <span class="badge bg-success me-1" [ngClass]="{'bg-success': user.is_active, 'bg-danger': !user.is_active}"></span> {{user.is_active ? 'Active' : 'Passive'}}
-                            </td>
-                            <td class="text-end">
-                                <span class="dropdown">
-                                    <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport"
-                                        data-bs-toggle="dropdown">Actions</button>
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a class="dropdown-item" href="#">
-                                            Action
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            Another action
-                                        </a>
-                                    </div>
-                                </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="card-footer d-flex align-items-center">
-                <p class="m-0 text-muted">Showing <span>1</span> to <span>8</span> of <span>16</span> entries</p>
-                <ul class="pagination m-0 ms-auto">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                            <!-- Download SVG icon from http://tabler-icons.io/i/chevron-left -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <polyline points="15 6 9 12 15 18" />
-                            </svg>
-                            prev
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            next <!-- Download SVG icon from http://tabler-icons.io/i/chevron-right -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <polyline points="9 6 15 12 9 18" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                    </ng-template>
+                </ngx-datatable-column>
+            </ngx-datatable>
+
         </div>
     </div>
 </div>

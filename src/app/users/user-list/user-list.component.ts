@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { ColumnMode, SelectionType } from '@swimlane/ngx-datatable';
 import { lastValueFrom } from 'rxjs';
 import { Globals } from 'src/app/globals';
 import { Alert } from 'src/app/lib/alert';
@@ -23,6 +24,8 @@ export class UserListComponent implements OnInit {
   public editingAge = {};
   public editingSalary = {};
   public chkBoxSelected = [];
+  public SelectionType = SelectionType;
+  public ColumnMode = ColumnMode;
   filter: any = {};
   allUsers: any;
   search: any;
