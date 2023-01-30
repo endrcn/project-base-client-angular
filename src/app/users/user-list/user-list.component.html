@@ -14,6 +14,19 @@
 <div class="page-body">
     <div class="container-xl">
         <div class="card">
+            <div class="card-header">
+                <button class="btn btn-primary" data-bs-toggle="offcanvas" href="#userAddModal" role="button"
+                    aria-controls="userAddModal">
+                    <svg xmlns=" http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="44"
+                    height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                    {{'USERS.ADD' | translate}}
+                </button>
+            </div>
             <div class="card-body border-bottom py-3">
             </div>
             <ngx-datatable class="material fullscreen table table-responsive" [columnMode]="ColumnMode.force"
@@ -35,7 +48,8 @@
                 <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="100">
                     <ng-template ngx-datatable-cell-template>
                         <div class="btn-group">
-                            <button class="btn btn-pill btn-sm btn-outline-warning">
+                            <button class="btn btn-pill btn-sm btn-outline-warning" data-bs-toggle="offcanvas"
+                                href="#userUpdateModal" role="button" aria-controls="userUpdateModal">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-pencil-minus" width="24" height="24"
                                     viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -63,3 +77,7 @@
         </div>
     </div>
 </div>
+
+
+<app-user-add></app-user-add>
+<app-user-update></app-user-update>
