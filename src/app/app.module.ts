@@ -28,6 +28,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { TokenInterceptor } from './services/token.interceptor';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -55,6 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     NgxDatatableModule,
     FormsModule,
+    NgSelectModule,
     ToastrModule.forRoot(),
     TranslateModule.forRoot({
       defaultLanguage: "tr",
