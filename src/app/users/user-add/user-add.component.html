@@ -1,7 +1,7 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="userAddModal" aria-labelledby="userAddModal">
     <div class="offcanvas-header">
         <h2 class="offcanvas-title">{{'USERS.ADD' | translate}}</h2>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" id="addModalClose" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <div class="action-tags">
@@ -38,7 +38,7 @@
                 </ng-select>
             </div>
             <div class="text-end">
-                <button type="button" class="btn btn-primary">SAVE</button>
+                <button type="button" (click)="add()" class="btn btn-primary">{{'COMMON.ADD' | translate}}</button>
             </div>
         </div>
     </div>
