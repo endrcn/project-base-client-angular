@@ -1,7 +1,8 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="userUpdateModal" aria-labelledby="userUpdateModal">
     <div class="offcanvas-header">
         <h2 class="offcanvas-title">{{'USERS.UPDATE_TITLE' | translate}}</h2>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" id="updateModalClose"></button>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"
+            id="updateModalClose"></button>
     </div>
     <div class="offcanvas-body">
         <div class="action-tags">
@@ -31,16 +32,17 @@
                 <input type="text" id="phone_number" name="phone_number" [(ngModel)]="user.phone_number"
                     class="new-todo-item-title form-control" placeholder="{{'USERS.TABLE.PHONE' | translate}}" />
             </div>
-            <!-- <div class="mb-1">
-              <label class="form-label" for="select2-multiple">{{'USERS.TABLE.LEVEL' | translate}}</label>
-              <ng-select [items]="userLevels" bindLabel="name" name="level" bindValue="id" [(ngModel)]="user.level">
-              </ng-select>
-            </div> -->
             <div class="mb-1">
                 <label class="form-label" for="select2-multiple">Roles</label>
                 <ng-select [items]="roles" bindLabel="role_name" name="selectedRoles" bindValue="_id" [multiple]="true"
                     [(ngModel)]="user.role_ids" class="form-control">
                 </ng-select>
+            </div>
+            <div class="mb-1">
+                <label class="form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="user.is_active">
+                    <span class="form-check-label">{{'COMMON.ACTIVATE' | translate}}</span>
+                </label>
             </div>
         </div>
         <div class="text-end">
