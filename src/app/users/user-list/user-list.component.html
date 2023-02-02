@@ -46,10 +46,10 @@
                     </ng-template>
                 </ngx-datatable-column>
                 <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="100">
-                    <ng-template ngx-datatable-cell-template>
+                    <ng-template ngx-datatable-cell-template let-row="row">
                         <div class="btn-group">
                             <button class="btn btn-pill btn-sm btn-outline-warning" data-bs-toggle="offcanvas"
-                                href="#userUpdateModal" role="button" aria-controls="userUpdateModal">
+                                href="#userUpdateModal" role="button" aria-controls="userUpdateModal" (click)="selectUser(row)">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-pencil-minus" width="24" height="24"
                                     viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -80,4 +80,4 @@
 
 
 <app-user-add [roles]="roles" [parent]="this"></app-user-add>
-<app-user-update></app-user-update>
+<app-user-update [roles]="roles" [parent]="this" [user]="user"></app-user-update>
