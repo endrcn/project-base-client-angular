@@ -65,7 +65,7 @@ export class UserListComponent implements OnInit {
 
   async delete(id: any) {
     try {
-      let alertResult = await this.alert.dialog(this.translate.instant("COMMON.WARNING_TITLE"), this.translate.instant("USERS.DELETE_WARNING_MSG"), "warning");
+      let alertResult = await this.alert.dialog(this.translate.instant("COMMON.WARNING_TITLE"), this.translate.instant("COMMON.DELETE_WARNING_MSG"), "warning");
 
       if (alertResult.isConfirmed) {
         await lastValueFrom(this.userService.delete({ id }));
