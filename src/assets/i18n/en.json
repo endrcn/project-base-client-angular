@@ -41,10 +41,8 @@
     "UPDATE_TITLE": "Update Role",
     "TABLE": {
       "NAME": "Role Name",
-      "DESC": "Description",
-      "LEVEL": "Seviye"
+      "DESC": "Description"
     },
-    "DELETE_WARNING_MSG": "Rolü silmek istediğinize emin misiniz?",
     "PRIVILEGES": {
       "TITLE": "Rol Yetkileri",
       "ADMIN_ACCESS": "Yönetici Erişimi",
