@@ -29,6 +29,9 @@ import { FormsModule } from '@angular/forms';
 import { TokenInterceptor } from './services/token.interceptor';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { CategoryListComponent } from './categories/category-list/category-list.component';
+import { CategoryAddComponent } from './categories/category-add/category-add.component';
+import { CategoryUpdateComponent } from './categories/category-update/category-update.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -48,7 +51,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     RoleListComponent,
     RoleUpdateComponent,
     RoleAddComponent,
-    LoginComponent
+    LoginComponent,
+    CategoryListComponent,
+    CategoryAddComponent,
+    CategoryUpdateComponent
   ],
   imports: [
     BrowserModule,
