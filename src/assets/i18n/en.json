@@ -44,46 +44,35 @@
       "DESC": "Description"
     },
     "PRIVILEGES": {
-      "TITLE": "Rol Yetkileri",
-      "ADMIN_ACCESS": "Yönetici Erişimi",
-      "ADMIN_ACCESS_INFO": "Tüm sisteme erişime izin verir",
+      "TITLE": "Role Privileges",
+      "ADMIN_ACCESS": "Admin Access",
+      "ADMIN_ACCESS_INFO": "All privileges are handled",
       "KEYS": {
-        "VIEW": "Görüntüleme",
-        "PARTIALVIEW": "Kısıtlı Görüntüleme",
-        "ADD": "Ekleme",
-        "UPDATE": "Güncelleme",
-        "DELETE": "Silme",
-        "URGENT": "Öne Çıkarma",
-        "REJECT": "İptal Etme",
-        "PASS_TO_LAST": "Seviye Atlatma",
-        "PASS_TO_MAN": "Yöneticiye Gönderme",
-        "RETURN_TO_START": "Başa Döndürme",
-        "GET_CONFIRMATION": "Teyit Alma",
-        "REJECT_COMPLETED": "Tamamlananı İptal Etme"
+        "VIEW": "View",
+        "ADD": "Add",
+        "UPDATE": "Update",
+        "DELETE": "Delete"
       },
       "GROUPS": {
-        "USER": "Kullanıcı Yönetimi",
-        "ROLE": "Rol Yönetimi",
-        "INSTRUCTION": "Talimat Yönetimi",
-        "INSTRUCTIONCONTROL": "Talimat Kontrol Yönetimi",
-        "DASHBOARD": "Panel Yönetimi",
-        "CATEGORY": "Kategori Yönetimi",
-        "FILE": "Dosya Yönetimi",
-        "AUDITLOGS": "Aktiviteler"
+        "USER": "User Management",
+        "ROLE": "Role Management",
+        "DASHBOARD": "Dashboard Management",
+        "CATEGORY": "Category Management",
+        "AUDITLOGS": "Activities"
       }
     }
   },
   "AUTH": {
-    "SIGNIN": "Giriş Yap",
-    "EMAIL": "E-Posta",
-    "PASSWORD": "Şifre",
-    "LOGOUT": "Çıkış Yap"
+    "SIGNIN": "Sign In",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "LOGOUT": "Sign Out"
   },
   "AUDITLOGS": {
     "TITLE": "Aktiviteler"
   },
   "TABLE": {
-    "SEARCH": "Ara"
+    "SEARCH": "Search"
   },
   "COMMON": {
     "DESCRIPTION": "Description",
