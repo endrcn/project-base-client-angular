@@ -11,11 +11,16 @@
                 <section id="ngx-datatable-kitchen-sink">
                     <div class="row">
                         <div class="col-12 mb-50">
-                            <button class="btn btn-primary ml-1" rippleEffect data-bs-toggle="modal"
-                                data-bs-target="#new-role-modal">
-                                <i data-feather="plus" class="mr-0 mr-sm-1"></i><span
-                                    class="d-none d-sm-inline-block">{{'ROLES.ADD' |
-                                    translate}}</span>
+                            <button class="btn btn-primary" data-bs-toggle="offcanvas" href="#roleAddModal"
+                                role="button" aria-controls="roleAddModal">
+                                <svg xmlns=" http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus"
+                                    width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                                {{'ROLES.ADD' | translate}}
                             </button>
                         </div>
                         <div class="col-md-6 col-12">
@@ -78,6 +83,8 @@
         </div>
     </div>
 </div>
+
+<app-role-add [parent]="this" [privileges]="privileges" [privilegeGroups]="privilegeGroups"></app-role-add>
 
 <!-- Right Sidebar starts -->
 <!-- <div class="modal modal-slide-in sidebar-todo-modal fade" id="new-role-modal">

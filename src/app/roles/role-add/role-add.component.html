@@ -1,1 +1,73 @@
-<p>role-add works!</p>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="roleAddModal" aria-labelledby="roleAddModal">
+    <div class="offcanvas-header">
+        <h2 class="offcanvas-title">{{'ROLES.ADD' | translate}}</h2>
+        <button type="button" id="addRoleModalClose" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="action-tags">
+            <div class="mb-1">
+                <label for="role_name" class="form-label">{{'ROLES.TABLE.NAME' | translate}}</label>
+                <input type="text" id="role_name" name="role_name" [(ngModel)]="role.role_name"
+                    class="new-todo-item-title form-control" placeholder="{{'ROLES.TABLE.NAME' | translate}}" />
+            </div>
+            <div class="mb-1">
+                <label for="description" class="form-label">{{'ROLES.TABLE.DESC' | translate}}</label>
+                <input type="text" id="description" name="description" [(ngModel)]="role.description"
+                    class="new-todo-item-title form-control" placeholder="{{'ROLES.TABLE.DESC' | translate}}" />
+            </div>
+            <hr>
+            <div class="col-12">
+                <h4 class="mt-2 pt-50">{{'ROLES.PRIVILEGES.TITLE' | translate}}</h4>
+                <!-- Permission table -->
+                <div class="table-responsive">
+                    <table class="table table-flush-spacing">
+                        <tbody>
+                            <tr>
+                                <td class="text-nowrap fw-bolder">
+                                    {{'ROLES.PRIVILEGES.ADMIN_ACCESS' | translate}}
+                                    <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="{{'ROLES.PRIVILEGES.ADMIN_ACCESS_INFO' | translate}}">
+                                        <i data-feather="info"></i>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="selectAll" name="selectAll"
+                                            (change)="selectAll($event)" />
+                                        <label class="form-check-label" for="selectAll">{{'COMMON.SELECT_ALL' |
+                                            translate}}</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr *ngFor="let privGroup of privilegeGroups">
+                                <td class="text-nowrap fw-bolder">{{'ROLES.PRIVILEGES.GROUPS.'+privGroup.id | uppercase
+                                    | translate
+                                    }}
+                                </td>
+                                <td>
+                                    <div class="d-flex" style="flex-direction: column;">
+                                        <div class="form-check me-3 me-lg-5" *ngFor="let priv of privGroup.privileges">
+                                            <input class="form-check-input" type="checkbox"
+                                                id="addcheckbox_{{priv.Key}}" name="permissioncheck"
+                                                [(ngModel)]="permissions[priv.Key]"
+                                                (change)="permissionChange($event)" />
+                                            <label class="form-check-label" for="{{priv.Key}}">
+                                                {{'ROLES.PRIVILEGES.KEYS.'+priv.Name |
+                                                uppercase | translate}} </label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Permission table -->
+            </div>
+        </div>
+        <div class="my-1">
+            <button type="submit" (click)="add()" class="btn btn-primary update-btn me-1">{{'COMMON.ADD' |
+                translate}}</button>
+        </div>
+    </div>
+</div>
