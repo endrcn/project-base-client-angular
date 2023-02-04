@@ -1,0 +1,42 @@
+<div class="page-header d-print-none">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    {{'AUDITLOGS.TITLE' | translate}}
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page body -->
+<div class="page-body">
+    <div class="container-xl">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="divide-y">
+                            <div *ngFor="let auditlog of auditLogs">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="badge" [ngClass]="getPointClass(auditlog.proc_type)"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="text-truncate">
+                                            {{auditlog.log}}
+                                        </div>
+                                        <div class="text-muted">{{auditlog.createdAt | date:'dd/MM/yy H:mm:ss'}}</div>
+                                    </div>
+                                    <div class="col-auto align-self-center text-muted">
+                                        {{auditlog.email}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

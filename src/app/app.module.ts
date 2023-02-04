@@ -32,6 +32,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { CategoryListComponent } from './categories/category-list/category-list.component';
 import { CategoryAddComponent } from './categories/category-add/category-add.component';
 import { CategoryUpdateComponent } from './categories/category-update/category-update.component';
+import { AuditlogsComponent } from './auditlogs/auditlogs/auditlogs.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -54,7 +55,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginComponent,
     CategoryListComponent,
     CategoryAddComponent,
-    CategoryUpdateComponent
+    CategoryUpdateComponent,
+    AuditlogsComponent
   ],
   imports: [
     BrowserModule,
