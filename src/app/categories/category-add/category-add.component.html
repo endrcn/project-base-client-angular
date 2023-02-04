@@ -1,1 +1,21 @@
-<p>category-add works!</p>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="categoryAddModal" aria-labelledby="categoryAddModal">
+    <div class="offcanvas-header">
+        <h2 class="offcanvas-title">{{'CATEGORIES.ADD' | translate}}</h2>
+        <button type="button" id="addRoleModalClose" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="action-tags">
+            <div class="mb-1">
+                <label for="name" class="form-label">{{'CATEGORIES.TABLE.NAME' | translate}}</label>
+                <input type="text" id="name" name="name" [(ngModel)]="category.name"
+                    class="new-todo-item-title form-control" placeholder="{{'CATEGORIES.TABLE.NAME' | translate}}" />
+            </div>
+        </div>
+        <div class="text-end">
+            <button type="submit" (click)="add()" class="btn btn-primary update-btn">{{'COMMON.ADD' |
+                translate}}
+            </button>
+        </div>
+    </div>
+</div>

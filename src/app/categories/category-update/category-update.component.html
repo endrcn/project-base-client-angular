@@ -1,1 +1,28 @@
-<p>category-update works!</p>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="categoryUpdateModal" aria-labelledby="categoryUpdateModal">
+    <div class="offcanvas-header">
+        <h2 class="offcanvas-title">{{'CATEGORIES.ADD' | translate}}</h2>
+        <button type="button" id="updateCategoryModalClose" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="action-tags">
+            <div class="mb-1">
+              <label for="name" class="form-label">{{'CATEGORIES.TABLE.NAME' | translate}}</label>
+              <input type="text" id="name" name="name" [(ngModel)]="category.name"
+                class="new-todo-item-title form-control" placeholder="{{'CATEGORIES.TABLE.NAME' | translate}}" />
+            </div>
+  
+            <div class="mb-1">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="isActiveCheckbox" name="isActiveCheckbox"
+                  [(ngModel)]="category.is_active" [checked]="category.is_active" />
+                <label class="form-check-label" for="isActiveCheckbox">{{'COMMON.ACTIVATE' | translate}}</label>
+              </div>
+            </div>
+          </div>
+          <div class="text-end">
+            <button type="submit" (click)="update()" class="btn btn-primary update-btn me-1">{{'COMMON.UPDATE' |
+              translate}}</button>
+          </div>
+    </div>
+</div>

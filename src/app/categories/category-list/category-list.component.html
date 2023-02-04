@@ -1,1 +1,93 @@
-<p>category-list works!</p>
+<div class=" app-content content ">
+    <div class=" content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">{{'CATEGORIES.TITLE' | translate}}</h4>
+            </div>
+            <div class="card-body">
+                <!-- Kitchen Sink Datatables -->
+                <section id="ngx-datatable-kitchen-sink">
+                    <div class="row">
+                        <div class="col-12 mb-50">
+                            <button class="btn btn-primary ml-1" rippleEffect data-bs-toggle="offcanvas" href="#categoryAddModal"
+                            role="button" aria-controls="categoryAddModal">
+                                <i data-feather="plus" class="mr-0 mr-sm-1"></i><span
+                                    class="d-none d-sm-inline-block">{{'CATEGORIES.ADD' |
+                                    translate}}</span>
+                            </button>
+                        </div>
+                        <div class="col-md-6 col-12">
+                        </div>
+                        <div class="col-md-6 col-12 d-flex justify-content-md-end">
+                            <div class="d-flex align-items-center justify-content-end pr-1 pb-1 pl-1 pl-md-0 pb-md-0">
+                                <label class="d-flex align-items-center"><input type="search"
+                                        placeholder="{{'TABLE.SEARCH' | translate}}" class="form-control ml-25"
+                                        (keyup)="filterUpdate()" [(ngModel)]="search" /></label>
+                            </div>
+                        </div>
+                    </div>
+                    <ngx-datatable [rows]="rows" [rowHeight]="58" class="bootstrap core-bootstrap" [limit]="10"
+                        [columnMode]="ColumnMode.force" [headerHeight]="40" [footerHeight]="50" [scrollbarH]="true"
+                        [limit]="basicSelectedOption">
+                        <ngx-datatable-column name="{{'CATEGORIES.TABLE.NAME' | translate}}" prop="name">
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="{{'COMMON.STATUS' | translate}}" prop="is_active">
+                            <ng-template ngx-datatable-cell-template let-row="row">
+                                <span class="badge bg-success me-1"
+                                    [ngClass]="{'bg-success': row.is_active, 'bg-danger': !row.is_active}"></span>
+                                {{row.is_active ? 'Active' : 'Passive'}}
+                            </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="120" [sortable]="false">
+                            <ng-template ngx-datatable-cell-template let-row="row">
+                                <div class="btn-group">
+                                    <button class="btn btn-pill btn-sm btn-outline-warning" data-bs-toggle="offcanvas"
+                                        href="#categoryUpdateModal" role="button" aria-controls="categoryUpdateModal"
+                                        (click)="selectCategory(row)">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-pencil-minus" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z"></path>
+                                            <path d="M13.5 6.5l4 4"></path>
+                                            <path d="M16 18h4"></path>
+                                        </svg>
+                                    </button>
+                                    <button class="btn btn-pill btn-sm btn-outline-danger" (click)="delete(row._id)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
+                                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                            stroke="currentColor" fill="none" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M18 6l-12 12"></path>
+                                            <path d="M6 6l12 12"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </ng-template>
+                        </ngx-datatable-column>
+                    </ngx-datatable>
+                </section>
+                <!--/ Kitchen Sink Datatables -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-category-add [parent]="this"></app-category-add>
+<app-category-update [parent]="this" [category]="category"></app-category-update>
+
+<!-- Right Sidebar starts -->
+<!-- <div class="modal modal-slide-in sidebar-todo-modal fade" id="new-category-modal">
+    <app-add-category [parent]="this"></app-add-category>
+  </div> -->
+<!-- Right Sidebar ends -->
+
+<!-- Right Sidebar starts -->
+<!-- <div class="modal modal-slide-in sidebar-todo-modal fade" id="update-category-modal">
+    <app-update-category [parent]="this" [category]="category"></app-update-category>
+  </div> -->
+<!-- Right Sidebar ends -->
