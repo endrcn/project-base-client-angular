@@ -5,14 +5,16 @@ import { CategoryListComponent } from './categories/category-list/category-list.
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RoleListComponent } from './roles/role-list/role-list.component';
+import { RoleGuardService } from './services/role.guard';
 import { UserListComponent } from './users/user-list/user-list.component';
 
 const routes: Routes = [
+  { path: 'dashboard', component: DashboardComponent, canActivate: [RoleGuardService], data: { expectedRoles: ["dashboard_view"] } },
+  { path: 'users', component: UserListComponent, canActivate: [RoleGuardService], data: { expectedRoles: ["user_view"] }  },
+  { path: 'roles', component: RoleListComponent, canActivate: [RoleGuardService], data: { expectedRoles: ["role_view"] }  },
+  { path: 'categories', component: CategoryListComponent, canActivate: [RoleGuardService], data: { expectedRoles: ["category_view"] }  },
+  { path: 'activities', component: AuditlogsComponent, canActivate: [RoleGuardService], data: { expectedRoles: ["auditlog_view"] }  },
   { path: 'login', component: LoginComponent },
-  { path: 'users', component: UserListComponent },
-  { path: 'roles', component: RoleListComponent },
-  { path: 'categories', component: CategoryListComponent },
-  { path: 'activities', component: AuditlogsComponent },
   { path: '**', component: DashboardComponent }
 ];
 

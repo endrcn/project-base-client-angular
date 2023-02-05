@@ -4,6 +4,7 @@ import { ColumnMode, SelectionType } from '@swimlane/ngx-datatable';
 import { lastValueFrom } from 'rxjs';
 import { Globals } from 'src/app/globals';
 import { Alert } from 'src/app/lib/alert';
+import { AuthService } from 'src/app/services/auth.service';
 import { RolesService } from '../services/roles.service';
 
 @Component({
@@ -31,7 +32,7 @@ export class RoleListComponent implements OnInit {
   allRoles: any;
   search: any;
 
-  constructor(private roleService: RolesService, private alert: Alert, private translate: TranslateService, private globals: Globals) { }
+  constructor(private roleService: RolesService, private alert: Alert, private translate: TranslateService, private globals: Globals, public auth: AuthService) { }
 
   ngOnInit(): void {
     this.get();

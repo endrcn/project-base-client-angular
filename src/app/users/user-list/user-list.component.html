@@ -15,7 +15,7 @@
     <div class="container-xl">
         <div class="card">
             <div class="card-header">
-                <button class="btn btn-primary" data-bs-toggle="offcanvas" href="#userAddModal" role="button"
+                <button class="btn btn-primary" data-bs-toggle="offcanvas" href="#userAddModal" role="button"  *ngIf="auth.checkUserRoles('user_add')"
                     aria-controls="userAddModal">
                     <svg xmlns=" http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="44"
                     height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
@@ -45,11 +45,11 @@
                         {{row.is_active ? 'Active' : 'Passive'}}
                     </ng-template>
                 </ngx-datatable-column>
-                <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="100">
+                <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="100" *ngIf="auth.checkUserRoles(['user_update', 'user_delete'])">
                     <ng-template ngx-datatable-cell-template let-row="row">
                         <div class="btn-group">
                             <button class="btn btn-pill btn-sm btn-outline-warning" data-bs-toggle="offcanvas"
-                                href="#userUpdateModal" role="button" aria-controls="userUpdateModal" (click)="selectUser(row)">
+                                href="#userUpdateModal" role="button" aria-controls="userUpdateModal" (click)="selectUser(row)" *ngIf="auth.checkUserRoles('user_update')">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-pencil-minus" width="24" height="24"
                                     viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -60,7 +60,7 @@
                                     <path d="M16 18h4"></path>
                                 </svg>
                             </button>
-                            <button class="btn btn-pill btn-sm btn-outline-danger" (click)="delete(row._id)">
+                            <button class="btn btn-pill btn-sm btn-outline-danger" (click)="delete(row._id)"  *ngIf="auth.checkUserRoles('user_delete')">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
                                     width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                                     fill="none" stroke-linecap="round" stroke-linejoin="round">

@@ -5,6 +5,7 @@ import { lastValueFrom } from 'rxjs';
 import { Globals } from 'src/app/globals';
 import { Alert } from 'src/app/lib/alert';
 import { RolesService } from 'src/app/roles/services/roles.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from '../services/users.service';
 
 @Component({
@@ -31,7 +32,7 @@ export class UserListComponent implements OnInit {
   search: any;
   roles: any;
 
-  constructor(private userService: UsersService, private alert: Alert, private translate: TranslateService, private globals: Globals, private rolesService: RolesService) {
+  constructor(private userService: UsersService, private alert: Alert, private translate: TranslateService, private globals: Globals, private rolesService: RolesService, public auth: AuthService) {
   }
 
   ngOnInit(): void {

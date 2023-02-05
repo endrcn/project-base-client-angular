@@ -96,11 +96,6 @@ export class AuthService {
     return false;
   }
 
-
-  getUnlimitedRoles(roles = []) {
-    return roles.filter((x: any) => x.unlimited_bots == true);
-  }
-
   getRolesPrivileges(roles = []) {
     let privileges: any[] = [];
     let privMatrix = roles.map((x: any) => x.privilege);
@@ -148,19 +143,6 @@ export class AuthService {
       }
 
     }
-  }
-
-  checkUserLevel(approvalLevel: number) {
-    let userLevels = this.user.roles.map((x: { level: any; }) => x.level);
-    for (let i = 0; i < userLevels.length; i++) {
-      if (approvalLevel == userLevels[i] - 1) return true;
-    }
-
-    return false;
-  }
-
-  getUserLevels() {
-    return this.user.roles.map((x: { level: any; }) => x.level);
   }
 
   getCurrentUser() {

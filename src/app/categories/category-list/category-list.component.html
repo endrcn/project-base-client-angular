@@ -11,7 +11,7 @@
                 <section id="ngx-datatable-kitchen-sink">
                     <div class="row">
                         <div class="col-12 mb-50">
-                            <button class="btn btn-primary ml-1" rippleEffect data-bs-toggle="offcanvas" href="#categoryAddModal"
+                            <button class="btn btn-primary ml-1" rippleEffect data-bs-toggle="offcanvas" href="#categoryAddModal" *ngIf="auth.checkUserRoles('category_add')"
                             role="button" aria-controls="categoryAddModal">
                                 <i data-feather="plus" class="mr-0 mr-sm-1"></i><span
                                     class="d-none d-sm-inline-block">{{'CATEGORIES.ADD' |
@@ -40,11 +40,11 @@
                                 {{row.is_active ? 'Active' : 'Passive'}}
                             </ng-template>
                         </ngx-datatable-column>
-                        <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="120" [sortable]="false">
+                        <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="120" [sortable]="false" *ngIf="auth.checkUserRoles(['category_update', 'category_delete'])">
                             <ng-template ngx-datatable-cell-template let-row="row">
                                 <div class="btn-group">
                                     <button class="btn btn-pill btn-sm btn-outline-warning" data-bs-toggle="offcanvas"
-                                        href="#categoryUpdateModal" role="button" aria-controls="categoryUpdateModal"
+                                        href="#categoryUpdateModal" role="button" aria-controls="categoryUpdateModal" *ngIf="auth.checkUserRoles('category_update')"
                                         (click)="selectCategory(row)">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-pencil-minus" width="24" height="24"
@@ -56,7 +56,7 @@
                                             <path d="M16 18h4"></path>
                                         </svg>
                                     </button>
-                                    <button class="btn btn-pill btn-sm btn-outline-danger" (click)="delete(row._id)">
+                                    <button class="btn btn-pill btn-sm btn-outline-danger" (click)="delete(row._id)"  *ngIf="auth.checkUserRoles('category_delete')">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
                                             width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                             stroke="currentColor" fill="none" stroke-linecap="round"

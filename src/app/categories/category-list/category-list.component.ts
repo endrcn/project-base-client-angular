@@ -35,7 +35,7 @@ export class CategoryListComponent {
   category: any = {};
   allRows: any;
 
-  constructor(private categoryService: CategoriesService, private auth: AuthService, private alert: Alert, private translate: TranslateService, private globals: Globals) { }
+  constructor(private categoryService: CategoriesService, public auth: AuthService, private alert: Alert, private translate: TranslateService, private globals: Globals) { }
 
   ngOnInit(): void {
     this.subscription = this.auth.getUser().subscribe(data => {
