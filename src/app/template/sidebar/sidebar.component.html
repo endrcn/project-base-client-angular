@@ -24,7 +24,7 @@
                 <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
               </svg>
             </span>
-            <span class="nav-link-title" *ngIf="auth.checkUserRoles(['dashboard_view'])">
+            <span class="nav-link-title" *ngIf="auth.checkUserRoles('dashboard_view')">
               {{'MAIN_MENU.DASHBOARD' | translate}}
             </span>
           </a>
@@ -44,24 +44,24 @@
                 <line x1="16" y1="5.25" x2="8" y2="9.75" />
               </svg>
             </span>
-            <span class="nav-link-title" *ngIf="auth.checkUserRoles(['user_view', 'role_view'])">
+            <span class="nav-link-title" *ngIf="auth.checkUserRoles('user_view', 'role_view')">
               {{'MAIN_MENU.USERS_AND_ROLES' | translate}}
             </span>
           </a>
           <div class="dropdown-menu">
             <div class="dropdown-menu-columns">
               <div class="dropdown-menu-column">
-                <a class="dropdown-item" routerLink="/users" *ngIf="auth.checkUserRoles(['user_view'])">
+                <a class="dropdown-item" routerLink="/users" *ngIf="auth.checkUserRoles('user_view')">
                   {{'MAIN_MENU.USERS' | translate}}
                 </a>
-                <a class="dropdown-item" routerLink="/roles" *ngIf="auth.checkUserRoles(['role_view'])">
+                <a class="dropdown-item" routerLink="/roles" *ngIf="auth.checkUserRoles('role_view')">
                   {{'MAIN_MENU.ROLES' | translate}}
                 </a>
               </div>
             </div>
           </div>
         </li>
-        <li class="nav-item" *ngIf="auth.checkUserRoles(['category_view'])">
+        <li class="nav-item" *ngIf="auth.checkUserRoles('category_view')">
           <a class="nav-link" routerLink="/categories">
             <span
               class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
@@ -77,7 +77,7 @@
             </span>
           </a>
         </li>
-        <li class="nav-item" *ngIf="auth.checkUserRoles(['auditlog_view'])">
+        <li class="nav-item" *ngIf="auth.checkUserRoles('auditlog_view')">
           <a class="nav-link" routerLink="/activities">
             <span
               class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->

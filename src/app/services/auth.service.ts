@@ -106,7 +106,7 @@ export class AuthService {
     return privileges;
   }
 
-  checkUserRoles(expectedRoles: any) {
+  checkUserRoles(...expectedRoles: any) {
     let privileges = this.getRolesPrivileges(this.user.roles);
     if (this.checkRoles(expectedRoles, privileges)) {
       return true;

@@ -45,7 +45,7 @@
                         {{row.is_active ? 'Active' : 'Passive'}}
                     </ng-template>
                 </ngx-datatable-column>
-                <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="100" *ngIf="auth.checkUserRoles(['user_update', 'user_delete'])">
+                <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="100" *ngIf="auth.checkUserRoles('user_update', 'user_delete')">
                     <ng-template ngx-datatable-cell-template let-row="row">
                         <div class="btn-group">
                             <button class="btn btn-pill btn-sm btn-outline-warning" data-bs-toggle="offcanvas"
