@@ -47,7 +47,7 @@
                                 {{row.is_active ? 'Active' : 'Passive'}}
                             </ng-template>
                         </ngx-datatable-column>
-                        <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="120" [sortable]="false" *ngIf="auth.checkUserRoles(['role_update', 'role_delete'])">
+                        <ngx-datatable-column name="{{'COMMON.ACTIONS' | translate}}" [width]="120" [sortable]="false" *ngIf="auth.checkUserRoles('role_update', 'role_delete')">
                             <ng-template ngx-datatable-cell-template let-row="row">
                                 <div class="btn-group">
                                     <button class="btn btn-pill btn-sm btn-outline-warning" data-bs-toggle="offcanvas" *ngIf="auth.checkUserRoles('role_update')"
@@ -86,16 +86,3 @@
 
 <app-role-add [parent]="this" [privileges]="privileges" [privilegeGroups]="privilegeGroups"></app-role-add>
 <app-role-update [role]="role" [parent]="this" [privileges]="privileges" [privilegeGroups]="privilegeGroups"></app-role-update>
-
-<!-- Right Sidebar starts -->
-<!-- <div class="modal modal-slide-in sidebar-todo-modal fade" id="new-role-modal">
-    <app-add-role [parent]="this" [privileges]="privileges" [privilegeGroups]="privilegeGroups"></app-add-role>
-  </div> -->
-<!-- Right Sidebar ends -->
-
-<!-- Right Sidebar starts -->
-<!-- <div class="modal modal-slide-in sidebar-todo-modal fade" id="update-role-modal">
-    <app-update-role [parent]="this" [role]="role" [privileges]="privileges" [privilegeGroups]="privilegeGroups">
-    </app-update-role>
-  </div> -->
-<!-- Right Sidebar ends -->
